@@ -1,4 +1,4 @@
-<span style="color:#2c3e50;">Golf Club API</span>
+Golf Club
 
 A Spring Boot REST API for managing golf club Members, Tournaments, and Tournament Participation.
 
@@ -16,7 +16,7 @@ API testing using Postman
 
 GitHub Action for automated Docker image builds and pushes
 
-<span style="color:#8e44ad;">Project Structure</span>
+Project Structure
 golf-club-api/
  ├── src/main/java/com/chrisking/golfclub/
  │    ├── entity/
@@ -30,7 +30,7 @@ golf-club-api/
  ├── docker-compose.yml
  └── README.md
 
-<span style="color:#2980b9;">Features</span>
+Features
 Members
 
 Auto-generated ID
@@ -61,7 +61,7 @@ GitHub Actions
 
 Builds and pushes Docker image to Docker Hub on merges to main
 
-<span style="color:#16a085;">Running the Project Locally</span>
+Running the Project Locally
 Requirements
 
 Java 21+
@@ -90,7 +90,7 @@ API will run at:
 
 http://localhost:8080
 
-<span style="color:#c0392b;">Running with Docker</span>
+Running with Docker
 Requirements
 
 Docker Desktop installed.
@@ -115,8 +115,8 @@ Database connection inside Docker:
 
 jdbc:postgresql://db:5432/golfclubdb
 
-<span style="color:#d35400;">API Documentation</span>
-<span style="color:#e67e22;">Member Endpoints</span>
+API Documentation
+Member Endpoints
 Create Member
 POST /api/members
 
@@ -142,7 +142,7 @@ GET /api/members/search?phone=555
 GET /api/members/search?type=GOLD
 GET /api/members/search?startDate=2025-01-01
 
-<span style="color:#e67e22;">Tournament Endpoints</span>
+Tournament Endpoints
 Create Tournament
 POST /api/tournaments
 
@@ -153,14 +153,14 @@ Search Tournaments
 GET /api/tournaments/search?startDate=2025-01-01
 GET /api/tournaments/search?location=New York
 
-<span style="color:#e67e22;">Member-to-Tournament</span>
+Member-to-Tournament
 Add Member to Tournament
 POST /api/tournaments/{tournamentId}/members/{memberId}
 
 Get Members of Tournament
 GET /api/tournaments/{tournamentId}/members
 
-<span style="color:#7f8c8d;">Screenshots Required</span>
+Screenshots Required
 
 Include the following in your repository:
 
@@ -174,7 +174,7 @@ AWS RDS setup steps (if attempted)
 
 API running successfully against AWS RDS (optional)
 
-<span style="color:#8e44ad;">GitHub Actions (Optional CI/CD)</span>
+GitHub Actions
 
 Workflow file:
 
@@ -200,7 +200,7 @@ DOCKERHUB_USERNAME
 
 DOCKERHUB_TOKEN
 
-<span style="color:#2c3e50;">Troubleshooting</span>
+Troubleshooting
 400 Bad Request
 
 Invalid JSON or missing required fields. Ensure Content-Type: application/json.

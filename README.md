@@ -239,7 +239,7 @@ Required GitHub Secrets:
 
     DOCKERHUB_TOKEN
 
-Troubleshooting
+## Project issues that required Troubleshooting:
 400 Bad Request
 
     The POST request body is missing required fields or has invalid JSON.

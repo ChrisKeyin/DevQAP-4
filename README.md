@@ -1,6 +1,7 @@
-Golf Club API
+<span style="color:#2c3e50;">Golf Club API</span>
 
 A Spring Boot REST API for managing golf club Members, Tournaments, and Tournament Participation.
+
 This project demonstrates:
 
 Object-Relational Mapping using Spring Data JPA
@@ -9,15 +10,13 @@ Clean layered architecture (Entities, Repositories, Services, Controllers)
 
 PostgreSQL database integration
 
-Docker containerization (Dockerfile and docker-compose)
+Docker containerization with Dockerfile and docker-compose
 
 API testing using Postman
 
-GitHub Action for automatically building and pushing Docker images
+GitHub Action for automated Docker image builds and pushes
 
-
-
-Project Structure
+<span style="color:#8e44ad;">Project Structure</span>
 golf-club-api/
  ├── src/main/java/com/chrisking/golfclub/
  │    ├── entity/
@@ -31,103 +30,98 @@ golf-club-api/
  ├── docker-compose.yml
  └── README.md
 
-Features
+<span style="color:#2980b9;">Features</span>
 Members
 
-Create new members with auto-generated ID
+Auto-generated ID
 
 Email uniqueness enforcement
 
-Search capabilities: name, membership type, phone number, membership start date
+Search by name, membership type, phone number, or membership start date
 
 Tournaments
 
-Create tournaments with start and end dates, location, entry fee, and prize amount
+Create tournaments with start date, end date, location, entry fee, and prize amount
 
-Search by start date or location
+Search tournaments by start date or location
 
 Member Participation
 
-Associate members with specific tournaments
+Add members to tournaments
 
-Retrieve all members participating in a tournament
+Retrieve all members in a specific tournament
 
 Docker Integration
 
-Fully containerized application
+Fully containerized API + PostgreSQL database
 
-Includes an application container and a PostgreSQL database container
+Persistent storage using Docker volumes
 
-Persistent PostgreSQL storage using Docker volumes
+GitHub Actions
 
-GitHub Action builds and pushes Docker image to Docker Hub on merges to the main branch
+Builds and pushes Docker image to Docker Hub on merges to main
 
-
-Spring Boot configured to support Amazon RDS PostgreSQL
-
-Documentation for steps taken toward cloud deployment
-
-Running the Project Locally
+<span style="color:#16a085;">Running the Project Locally</span>
 Requirements
 
-Java 21 or higher
+Java 21+
 
 Maven
 
-PostgreSQL (only needed if not using Docker)
+PostgreSQL (only if not using Docker)
 
 Steps
 
 Clone the repository
 
-Configure the database connection in src/main/resources/application.properties
+Configure database in src/main/resources/application.properties
 
 Build the project:
 
 mvn clean install
 
 
-Run the application from IntelliJ or from the command line:
+Run the application:
 
 mvn spring-boot:run
 
 
-The API will be available at:
+API will run at:
 
 http://localhost:8080
 
-Running the Project with Docker
+<span style="color:#c0392b;">Running with Docker</span>
 Requirements
 
-Docker Desktop installed
+Docker Desktop installed.
 
-Build and Run
+Build & Run
 docker compose build
 docker compose up
 
 
-The following containers will launch:
+Containers created:
 
-golfclub-api: Spring Boot application
+golfclub-api (Spring Boot)
 
-golfclub-db: PostgreSQL database
+golfclub-db (PostgreSQL)
 
-The API is accessible at:
+API accessible at:
 
 http://localhost:8080
 
 
-The application connects to the Postgres database inside Docker via:
+Database connection inside Docker:
 
 jdbc:postgresql://db:5432/golfclubdb
 
-API Documentation
-Member Endpoints
+<span style="color:#d35400;">API Documentation</span>
+<span style="color:#e67e22;">Member Endpoints</span>
 Create Member
 POST /api/members
 
 
-Example JSON body:
+Example JSON:
 
 {
   "memberName": "Chris King",
@@ -148,7 +142,7 @@ GET /api/members/search?phone=555
 GET /api/members/search?type=GOLD
 GET /api/members/search?startDate=2025-01-01
 
-Tournament Endpoints
+<span style="color:#e67e22;">Tournament Endpoints</span>
 Create Tournament
 POST /api/tournaments
 
@@ -159,43 +153,43 @@ Search Tournaments
 GET /api/tournaments/search?startDate=2025-01-01
 GET /api/tournaments/search?location=New York
 
-Member-to-Tournament Endpoints
+<span style="color:#e67e22;">Member-to-Tournament</span>
 Add Member to Tournament
 POST /api/tournaments/{tournamentId}/members/{memberId}
 
-Get Members of a Tournament
+Get Members of Tournament
 GET /api/tournaments/{tournamentId}/members
 
-Screenshots
+<span style="color:#7f8c8d;">Screenshots Required</span>
 
-Screenshots to include for instructor review:
+Include the following in your repository:
 
-Postman tests for all required endpoints
+Postman API test screenshots
 
-Docker Desktop or terminal showing running containers
+Docker Desktop or terminal showing containers running
 
 GitHub Action build success (if used)
 
 AWS RDS setup steps (if attempted)
 
-Application successfully running against AWS RDS (optional)
+API running successfully against AWS RDS (optional)
 
-GitHub Actions (Optional Feature)
+<span style="color:#8e44ad;">GitHub Actions (Optional CI/CD)</span>
 
-Workflow file path:
+Workflow file:
 
 .github/workflows/docker-publish.yml
 
 
 The workflow:
 
-Runs on pushes to the main branch
+Runs on pushes to main
 
-Builds Docker image using the project Dockerfile
+Builds Docker image
 
-Pushes the image to Docker Hub using stored GitHub Secrets
+Pushes to Docker Hub
 
-Produces the image:
+Docker image name:
 
 DOCKER_USERNAME/golf-club-api-app:latest
 
@@ -203,29 +197,30 @@ DOCKER_USERNAME/golf-club-api-app:latest
 Required GitHub Secrets:
 
 DOCKERHUB_USERNAME
+
 DOCKERHUB_TOKEN
 
-Troubleshooting
+<span style="color:#2c3e50;">Troubleshooting</span>
 400 Bad Request
 
-Occurs when the POST request body is missing required fields or has invalid JSON. Ensure the request uses Content-Type: application/json.
+Invalid JSON or missing required fields. Ensure Content-Type: application/json.
 
 404 Not Found
 
-Check that the URL does not contain trailing whitespace or newline characters. Ensure the path exactly matches the controller mapping.
+Check URL for trailing spaces or newline characters.
 
 Docker API cannot reach database
 
-When running in Docker, use the hostname db, not localhost.
+Use hostname db, not localhost.
 
 Example:
 
 jdbc:postgresql://db:5432/golfclubdb
 
-GitHub Actions Authentication Failure
+GitHub Actions authentication failure
 
-Verify that the Docker Hub username and access token are correctly stored as GitHub Secrets.
+Verify Docker Hub credentials in GitHub Secrets.
 
-License
+<span style="color:#34495e;">License</span>
 
 This project was created for academic purposes as part of a Software Development program.

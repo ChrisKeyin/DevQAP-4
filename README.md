@@ -9,7 +9,9 @@ This project demonstrates:
 - PostgreSQL database integration  
 - Docker containerization (Dockerfile and docker-compose)  
 - API testing using Postman  
-- GitHub Action for automatically building and pushing Docker images  
+- GitHub Action for automatically building and pushing Docker images
+
+  ## Project Screenshots are in the Screenshots folder in project root.
 
 ---
 
